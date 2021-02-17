@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
 
-// PlayerController는 플레이어 캐릭터로서 Player 게임 오브젝트를 제어한다.
 public class PlayerController : MonoBehaviour {
-   public AudioClip deathClip; // 사망시 재생할 오디오 클립
-   public float jumpForce = 700f; // 점프 힘
+   public AudioClip deathClip;
+   public float jumpForce = 700f;
    public static Vector2 playerPosition;
 
-   private int jumpCount = 0; // 누적 점프 횟수. 다단 점프 기능 구현을 위함
-   private bool isGrounded = false; // 바닥에 닿았는지 나타냄
-   private bool isDead = false; // 사망 상태. 죽은 상태에서 또 죽는 상황을 방지.
+   private int jumpCount = 0;
+   private bool isGrounded = false;
+   private bool isDead = false;
 
    public static bool cloudItem;
 
-   public static Rigidbody2D playerRigidbody; // 사용할 리지드바디 컴포넌트
-   private Animator animator; // 사용할 애니메이터 컴포넌트
-   private AudioSource playerAudio; // 사용할 오디오 소스 컴포넌트
+   public static Rigidbody2D playerRigidbody;
+   private Animator animator;
+   private AudioSource playerAudio;
 
    private void Start() {
         playerRigidbody = GetComponent<Rigidbody2D>();

@@ -38,7 +38,6 @@ public class ItemUsing : MonoBehaviour
     {
         if(collision.tag == "Dead")
         {
-            Debug.Log("Cloud Delete");
             cloudPlat.SetActive(false);
         }
     }

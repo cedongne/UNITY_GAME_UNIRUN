@@ -8,8 +8,6 @@ public class ItemManager : MonoBehaviour
 
     private Vector2 poolPosition = new Vector2(0, -25);
 
-
-    // Start is called before the first frame update
     public void OnEnable()
     {
         if(Random.Range(0, 7) == 0)

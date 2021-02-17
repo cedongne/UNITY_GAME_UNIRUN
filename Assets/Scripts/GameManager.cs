@@ -2,16 +2,14 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// 게임 오버 상태를 표현하고, 게임 점수와 UI를 관리하는 게임 매니저
-// 씬에는 단 하나의 게임 매니저만 존재할 수 있다.
 public class GameManager : MonoBehaviour {
-    public static GameManager instance; // 싱글톤을 할당할 전역 변수
+    public static GameManager instance; // Single tone
 
-    public bool isGameover = false; // 게임 오버 상태
+    public bool isGameover = false;
     public Text bestScoreText;
-    public Text scoreText; // 점수를 출력할 UI 텍스트
+    public Text scoreText;
     public GameObject newRecordText;
-    public GameObject gameoverUI; // 게임 오버시 활성화 할 UI 게임 오브젝트
+    public GameObject gameoverText;
     public GameObject PauseText;
     public Sprite CloudItemUI_nohave;
     public Sprite CloudItemUI_disable;
@@ -90,7 +88,7 @@ public class GameManager : MonoBehaviour {
     public void OnPlayerDead()
     {
         isGameover = true;
-        gameoverUI.SetActive(true);
+        gameoverText.SetActive(true);
         if (score > bestScore)
         {
             PlayerPrefs.SetInt("UniRunBestScore", score);
@@ -111,7 +109,5 @@ public class GameManager : MonoBehaviour {
             isPause = true;
             PauseText.SetActive(true);
         }
-
     }
-
 }
